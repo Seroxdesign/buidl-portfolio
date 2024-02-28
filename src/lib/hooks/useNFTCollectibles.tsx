@@ -64,10 +64,13 @@ const fetchAlchemyData = async (owner: string) => {
 
   const maticNfts = await alchemy
   .forNetwork(Network.MATIC_MAINNET)
-  .nft.getNftsForOwner(owner as string, { pageSize: 5 });
+  .nft.getNftsForOwner(owner as string, { pageSize: 100 });
 
   const optimismNfts = await alchemy
   .forNetwork(Network.OPT_MAINNET)
   .nft.getNftsForOwner(owner as string, { pageSize: 5 });
+
+  console.log(maticNfts.ownedNfts.filter((nft: any) => nft.tokenType !== "ERC1155"));
+
   return [{ mainnetNfts, maticNfts, optimismNfts }]
 };

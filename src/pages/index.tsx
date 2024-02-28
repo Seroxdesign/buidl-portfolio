@@ -8,6 +8,8 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { profile } from "@/data/profile";
 import { ConnectKitButton } from "connectkit";
 import { SendTransaction } from "@/components/SendTransaction";
+import MintNFT from "@/services/NFTMinter";
+import ReadNFT from "@/services/NFTReader";
 
 function LinkCard({
   href,
@@ -94,7 +96,6 @@ const Page: React.FC = () => {
             <h1 className="font-bold mt-4 text-2xl text-white">
               {profile?.name ?? ""}
             </h1>
-            <h3 className="text-base text-white">@{profile?.name ?? ""}</h3>
             <p className="text-white text-center text-base my-8">
               {profile?.bio ?? ""}
             </p>
@@ -104,6 +105,7 @@ const Page: React.FC = () => {
                 <TabsTrigger value="nfts">NFTs</TabsTrigger>
                 <TabsTrigger value="projects">Projects</TabsTrigger>
                 <TabsTrigger value="send">Donate</TabsTrigger>
+                <TabsTrigger value="contact-nft">Contact</TabsTrigger>
               </TabsList>
               <TabsContent
                 value="links"
@@ -153,6 +155,10 @@ const Page: React.FC = () => {
               </TabsContent>
               <TabsContent value="send">
                 <SendTransaction />
+              </TabsContent>
+              <TabsContent value="contact-nft" className="w-full mt-8 flex flex-col items-center justify-center">
+                <ReadNFT />
+                <MintNFT />
               </TabsContent>
             </Tabs>
           </div>
