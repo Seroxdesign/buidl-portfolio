@@ -2,6 +2,7 @@ import { ConnectKitButton } from "connectkit";
 import Wrapper from "@/components/Wrapper";
 import Image from "next/image";
 import { ApproveERC20 } from "@/components/approveERC20";
+import { BuyPlayerAWinToken } from "@/components/buyPlayerAWinToken";
 
 export default function SwapPage() {
   return (
@@ -22,6 +23,7 @@ export default function SwapPage() {
         <h2>Bet on Player A to win the game.</h2>
         <p>Amount in USDC</p>
         <ApproveERC20 />
+        <BuyPlayerAWinToken />
       </Wrapper>
     </main>
   );

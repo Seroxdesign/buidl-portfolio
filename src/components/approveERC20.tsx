@@ -18,7 +18,7 @@ export function ApproveERC20() {
 
     //const amount = parseEther(BigInt(formData.get("amount") as string));
     const amount = parseEther(formData.get("amount") as string);
-    const poolAddress = "0xBA12222222228d8Ba445958a75a0704d566BF2C8";
+    const vaultAddress = "0xBA12222222228d8Ba445958a75a0704d566BF2C8";
     //let hexString: string = '0x' + amount.toString(16);
     //3. End Form handler send ERC20 amount to approve
 
@@ -27,7 +27,7 @@ export function ApproveERC20() {
       address: "0xc019E03f801C2a59ABc8a6d8Eb6A7c4B4f668ea4",
       abi,
       functionName: "approve",
-      args: [poolAddress, amount],
+      args: [vaultAddress, amount],
     });
   }
   //6. wait for tx receipt
@@ -45,7 +45,7 @@ export function ApproveERC20() {
         type="submit"
         className="p-2 text-white rounded disabled:bg-gray-400 disabled:cursor-not-allowed bg-purple w-100"
       >
-        {isPending ? "Waiting for Approval..." : "Approve & Buy"}{" "}
+        {isPending ? "Waiting for Approval..." : "Step 1. Approve"}{" "}
       </button>
       {hash && <div>Transaction Hash: {hash}</div>}
       {isConfirming && <div>Waiting for confirmation...</div>}
