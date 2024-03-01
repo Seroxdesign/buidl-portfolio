@@ -1,6 +1,6 @@
 import "@/styles/globals.css";
 import { WagmiProvider, createConfig, http } from "wagmi";
-import { arbitrumSepolia, mainnet, polygonMumbai, polygon } from "wagmi/chains";
+import { mainnet, sepolia } from "wagmi/chains";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { ConnectKitProvider, getDefaultConfig } from "connectkit";
 import { ThemeProvider } from "@/components/themes";
@@ -9,15 +9,13 @@ import type { AppProps } from "next/app";
 const config = createConfig(
   getDefaultConfig({
     // Your dApps chains
-    chains: [arbitrumSepolia, polygonMumbai, polygon, mainnet],
+    chains: [sepolia, mainnet],
     transports: {
       // RPC URL for each chain
-      [arbitrumSepolia.id]: http(
+      [sepolia.id]: http(
         //`https://eth-mainnet.g.alchemy.com/v2/${process.env.NEXT_PUBLIC_ALCHEMY_MAINNET}`,
-        `https://arbitrum-sepolia.blockpi.network/v1/rpc/public`
+        `https://rpc.sepolia.dev`
       ),
-      [polygonMumbai.id]: http(`https://polygon-mumbai-pokt.nodies.app`),
-      [polygon.id]: http(`https://polygon-mainnet-pokt.nodies.app`),
     },
 
     // Required API Keys
