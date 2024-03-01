@@ -14,7 +14,7 @@ const config = createConfig(
       // RPC URL for each chain
       [sepolia.id]: http(
         //`https://eth-mainnet.g.alchemy.com/v2/${process.env.NEXT_PUBLIC_ALCHEMY_MAINNET}`,
-        `https://rpc.sepolia.dev`
+        `https://eth-sepolia.g.alchemy.com/v2/${process.env.NEXT_PUBLIC_ALCHEMY_SEPOLIA}`
       ),
     },
 

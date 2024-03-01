@@ -714,4 +714,5 @@ export const abi = [
     stateMutability: "view",
     type: "function",
   },
-];
+] as const;
+// Path: src/abi/FSC.ts
