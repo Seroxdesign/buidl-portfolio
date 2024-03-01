@@ -21,7 +21,13 @@ export default function SwapPage() {
         <h2>Bet on Player A to win the game.</h2>
         <p>Amount in USDC</p>
         <input name="Amount" placeholder="10" required />
-        <button type="submit"> Bet on Player A </button>
+        <button
+          type="submit"
+          className="p-2 text-white rounded disabled:bg-gray-400 disabled:cursor-not-allowed bg-purple w-100"
+        >
+          {" "}
+          Bet on Player A{" "}
+        </button>
       </Wrapper>
     </main>
   );
