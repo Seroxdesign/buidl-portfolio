@@ -8,7 +8,8 @@ import {
 import { balabi } from "../abi/balswap";
 import { parseEther } from "viem";
 
-export function BuyPlayerAWinToken() {
+//export function BuyPlayerBWinToken() {
+export const BuyPlayerBWinToken = () => {
   const { data: hash, error, isPending, writeContract } = useWriteContract();
   const senderAddress1 = useAccount();
   const walletAddress = senderAddress1?.address;
@@ -31,7 +32,7 @@ export function BuyPlayerAWinToken() {
         "0xdbe73929a0e79003f3a717c7f7e21ad9572e523900010000000000000000008e" as `0x${string}`,
       kind: 0,
       assetIn: "0xc019e03f801c2a59abc8a6d8eb6a7c4b4f668ea4" as `0x${string}`,
-      assetOut: "0x2cb367dadebf85c6ee81182e96ea2ed5270922b9" as `0x${string}`, // AWIN token address
+      assetOut: "0x99c5ec8609f6BcAe3109918f8C48Edb9f65e3c10" as `0x${string}`, // BWIN token address
       amount: parseEther("10"),
       userData: "0x" as `0x${string}`,
     };
@@ -90,6 +91,6 @@ export function BuyPlayerAWinToken() {
       )}
     </form>
   );
-}
+};
 
 // pool id = 0xdbe73929a0e79003f3a717c7f7e21ad9572e523900010000000000000000008e
