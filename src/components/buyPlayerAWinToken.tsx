@@ -3,12 +3,15 @@ import {
   type BaseError,
   useWaitForTransactionReceipt,
   useWriteContract,
+  useAccount,
 } from "wagmi";
 import { balabi } from "../abi/balswap";
 import { parseEther } from "viem";
 
 export function BuyPlayerAWinToken() {
   const { data: hash, error, isPending, writeContract } = useWriteContract();
+  const senderAddress1 = useAccount();
+  const walletAddress = senderAddress1?.address;
 
   async function submit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
@@ -39,8 +42,10 @@ export function BuyPlayerAWinToken() {
     //"toInternalBalance": bool false
     // Tuple2
 
-    const senderAddress = "0x61072E5d7456C95Ce02f26C83d1AD476bAA5bA91";
-    const recepientAddress = "0x61072E5d7456C95Ce02f26C83d1AD476bAA5bA91";
+    // const senderAddress = "0x61072E5d7456C95Ce02f26C83d1AD476bAA5bA91";
+    // Replace the above line with the following line to use the connected wallet address
+    const senderAddress = walletAddress;
+    const recepientAddress = walletAddress;
 
     const fundManagement = {
       sender: `${senderAddress}` as `0x${string}`,

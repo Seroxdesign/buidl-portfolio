@@ -6,10 +6,13 @@ import {
 } from "wagmi";
 import { parseEther } from "viem";
 import { abi } from "../abi/fsc";
+import { useAccount } from "wagmi";
 
 export function ApproveERC20() {
   //4. Use the write contract hook . 5.Add loading state
   const { data: hash, error, isPending, writeContract } = useWriteContract();
+  const senderAddress1 = useAccount();
+  const walletAddress = senderAddress1?.address;
 
   //3. Form handler send ERC20 amount to approve
   async function submit(e: React.FormEvent<HTMLFormElement>) {
@@ -19,6 +22,7 @@ export function ApproveERC20() {
     //const amount = parseEther(BigInt(formData.get("amount") as string));
     const amount = parseEther(formData.get("amount") as string);
     const vaultAddress = "0xBA12222222228d8Ba445958a75a0704d566BF2C8";
+
     //let hexString: string = '0x' + amount.toString(16);
     //3. End Form handler send ERC20 amount to approve
 
