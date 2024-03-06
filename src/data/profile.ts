@@ -1,13 +1,13 @@
 export const profile = {
   name: "Sero",
   role: "Software Engineer",
-  bio: "I'm a software engineer that loves building products and teaching others how to do the same.",
+  bio: "Father, Software Engineer, Podcaster.",
   imageUrl: "https://i.imgur.com/2m4XIqN.png",
   address: "0xc0163E58648b247c143023CFB26C2BAA42C9d9A9",
   links: [
     {
       name: "Twitter",
-      url: "https://twitter.com/seroxdesigns",
+      url: "https://twitter.com/seroxeth",
       icon: "twitter",
     },
     {
@@ -39,6 +39,18 @@ export const profile = {
       url: 'https://github.com/Seroxdesign/buidl-portfolio'
     },
     {
+      name: 'Raid Guild',
+      description: '',
+      imageUrl: '',
+      url: 'https://raidguild.org'
+    },
+    {
+      name: 'Pokt',
+      description: '',
+      imageUrl: '',
+      url: 'https://pokt.network'
+    },
+    {
       name: 'Superfluid',
       description: '',
       imageUrl: '',
@@ -51,17 +63,16 @@ export const profile = {
       url: 'https://tellor.io'
     },
     {
-      name: 'Pokt',
-      description: '',
-      imageUrl: '',
-      url: 'https://pokt.network'
-    },
-    {
       name: 'Gitcoin',
       description: '',
       imageUrl: '',
       url: 'https://gitcoin.co'
+    },
+    {
+      name: 'MetaGame',
+      description: '',
+      imageUrl: '',
+      url: 'https://enter.metagame.wtf'
     }
-
   ]
 }
